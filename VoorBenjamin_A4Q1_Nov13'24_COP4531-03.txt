@@ -1,0 +1,27 @@
+COMMENT Benjamin Voor, Algorithm Design & Analysis, Assignment 4, Question 1.
+COMMENT each index 'i' corresponds to person 'i', and each value corresponds to job 'j'.
+COMMENT goal: return 'i' minimum values from each array 'j'.
+
+BEGIN
+INPUT integer array costs[n][n]
+DECLARE OUTPUT integer array persons_with_jobs[n]
+DECLARE integer person := 0
+	COMMENT 'person' is the same as 'i'
+REPEAT
+COMMENT iterate through persons in the first for-loop
+	DECLARE integer job := 0
+	COMMENT 'job' is the same as 'j'
+	REPEAT
+	COMMENT iterate through jobs in the second for-loop
+		IF persons_with_jobs[person] IS GREATER THAN costs[k][l]
+			ASSIGN persons_with_jobs[person] := costs[k][l]
+		ENDIF
+		ASSIGN job := job + 1
+	UNTIL
+		job EQUALS n
+	ENDUNTIL
+	ASSIGN person := person + 1
+UNTIL
+	person EQUALS to n
+ENDUNTIL
+RETURN integer array persons_with_jobs[n]
